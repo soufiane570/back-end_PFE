@@ -1,9 +1,9 @@
-// module.exports = {
-//     host: "localhost",
-//     user: "root",
-//     password: "",
-//     database: "pfe"
-//   };
+module.exports = {
+    host: "41.142.38.218",
+    user: "root",
+    password: "",
+    database: "pfe"
+  };
 // module.exports = {
 //   host: "mysql2.serv00.com",
 //   user: "m5665_otvmovie",
