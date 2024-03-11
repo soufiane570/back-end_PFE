@@ -1,8 +1,8 @@
-const User = require('../models/user');
+const User = require('../Models/userModel');
 
 
 
-const { verifyToken } = require('./auth');
+// const { verifyToken } = require('./auth');
 
 exports.authenticateToken = (req, res, next) => {
   const token = req.header('Authorization');
