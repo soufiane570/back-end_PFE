@@ -2,9 +2,9 @@ const connection = require("./db.js") ;
 
 const PersonnelModel = {
   addPersonnel: (newPersonnel, callback) => {
-    const { matricule, nom, prenom, tel, imagePersonnel, fonction, secteur } = newPersonnel;
-    const sql = 'INSERT INTO Personnel (matricule, nom, prenom, tel, imagePersonnel, fonction, secteur) VALUES (?, ?, ?, ?, ?, ?, ?)';
-    connection.query(sql, [matricule, nom, prenom, tel, imagePersonnel, fonction, secteur], callback);
+    const { matricule, nom, prenom, tel, email, imagePersonnel, fonction, secteur, motDePass} = newPersonnel;
+    const sql = 'INSERT INTO Personnel (matricule, nom, prenom, tel, email, imagePersonnel, fonction, secteur, motDePass) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    connection.query(sql, [matricule, nom, prenom, tel, imagePersonnel, fonction, secteur, motDePass], callback);
   },
   
   getAllPersonnel: (callback) => {

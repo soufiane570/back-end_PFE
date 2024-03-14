@@ -10,8 +10,9 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+const userController = {
 // Fonction pour envoyer le code de vérification par e-mail
-exports.sendVerificationCode = async (req, res) => {
+sendVerificationCode: async (req, res) => {
   const { email } = req.body;
   User.getUserByEmail(email, (error, user) => {
     if (error) {
@@ -47,10 +48,10 @@ exports.sendVerificationCode = async (req, res) => {
       });
     });
   });
-};
+},
 
 // Fonction pour vérifier le code de vérification
-exports.verifyCode = async (req, res) => {
+verifyCode : async (req, res) => {
   const { email, code } = req.body;
 
   User.getUserByEmail(email, (error, user) => {
@@ -64,10 +65,10 @@ exports.verifyCode = async (req, res) => {
 
     res.json({ success: true });
   });
-};
+},
 
 // Fonction pour réinitialiser le mot de passe
-exports.resetPassword = async (req, res) => {
+resetPassword : async (req, res) => {
   const { email, newPassword } = req.body;
 
   User.updatePassword(email, newPassword, (error) => {
@@ -76,4 +77,7 @@ exports.resetPassword = async (req, res) => {
     }
     res.status(200).json({ message: 'Mot de passe réinitialisé avec succès.' });
   });
-};
+},
+}
+
+module.exports = userController;
