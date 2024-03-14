@@ -13,7 +13,6 @@ const transporter = nodemailer.createTransport({
 // Fonction pour envoyer le code de vérification par e-mail
 exports.sendVerificationCode = async (req, res) => {
   const { email } = req.body;
-
   User.getUserByEmail(email, (error, user) => {
     if (error) {
       return res.status(500).json({ message: 'Une erreur s\'est produite.' });

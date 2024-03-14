@@ -18,9 +18,9 @@ const PersonnelModel = {
   },
   
   updatePersonnel: (matricule, updatedPersonnel, callback) => {
-    const { nom, prenom, tel, imagePersonnel, fonction, secteur } = updatedPersonnel;
-    const sql = 'UPDATE Personnel SET nom = ?, prenom = ?, tel = ?, imagePersonnel = ?, fonction = ?, secteur = ? WHERE matricule = ?';
-    connection.query(sql, [nom, prenom, tel, imagePersonnel, fonction, secteur, matricule], callback);
+    const { nom, prenom, tel, email, imagePersonnel, fonction, secteur ,motDePass} = updatedPersonnel;
+    const sql = 'UPDATE Personnel SET nom = ?, prenom = ?, tel = ?,email = ?, imagePersonnel = ?, fonction = ?, secteur = ?,motDePass = ? WHERE matricule = ?';
+    connection.query(sql, [nom, prenom, tel, email, imagePersonnel, fonction, secteur,motDePass, matricule], callback);
   },
   
   deletePersonnel: (matricule, callback) => {
